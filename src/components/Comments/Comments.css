@@ -1,0 +1,64 @@
+.app__comments-card {
+  padding: 10px;
+  margin-bottom: 1rem;
+  /* border: 1px solid rgba(128, 128, 128, 0.295); */
+  border-radius: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+.app__comments-card:hover {
+  background-color: rgb(26, 26, 26);
+}
+
+.app__comments-card_img {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.app__comments-card_img img {
+  width: 30px;
+}
+.app__comments-card_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.app__comments-card_content h3 {
+  font-size: 1.2em;
+}
+.app__comments-card_content p {
+  font-size: 0.9em;
+}
+
+.app__comments-card_content a {
+  color: white;
+  font-size: 0.8em;
+}
+
+@media screen and (max-width: 768px) {
+  .app__comments-card_content h3 {
+    font-size: 1em;
+  }
+  .app__comments-card_content p {
+    font-size: 0.7em;
+  }
+  .app__comments-card_content a {
+    font-size: 0.7em;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .app__comments-card_content h3 {
+    font-size: 0.9em;
+  }
+  .app__comments-card_content p {
+    font-size: 0.65em;
+  }
+  .app__comments-card_content a {
+    font-size: 0.55em;
+  }
+}
