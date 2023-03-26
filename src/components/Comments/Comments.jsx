@@ -6,9 +6,11 @@ const Comments = ({ comments, postId }) => {
   return (
     <>
       <ul className="app__comments">
+        {/* .map para rodar todo o array de objetos "comments" para retornar os comentários que estão no JSON */}
         {comments.map((item, index) => {
           const { name, body, email } = item;
 
+          // Condicional para verificar quais os comentários que são associados a cada post
           if (item.postId === postId) {
             return (
               <li key={index} className="app__comments-card">

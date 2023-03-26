@@ -3,15 +3,16 @@ import PostItem from "../PostItem/PostItem";
 import Comments from "../Comments/Comments";
 import "./Posts.css";
 
-const Posts = ({ posts, comments, users }) => {
+const Posts = ({ posts, comments }) => {
   return (
     <div className="app__posts container">
       <h1>Posts</h1>
 
       <ul>
+        {/* .map para rodar todo o array de objetos "posts" para retornar os posts para a lista */}
         {posts.map((item, index) => {
           return (
-            <div className="app__posts-card" key={index}>
+            <li className="app__posts-card" key={index}>
               <div className="accordion-item">
                 <h2 className="accordion-header" id={`heading${index}`}>
                   <button
@@ -25,7 +26,6 @@ const Posts = ({ posts, comments, users }) => {
                     <PostItem
                       item={item}
                       index={index}
-                      users={users}
                     ></PostItem>
                   </button>
                 </h2>
@@ -42,7 +42,7 @@ const Posts = ({ posts, comments, users }) => {
                   </div>
                 </div>
               </div>
-            </div>
+            </li>
           );
         })}
       </ul>

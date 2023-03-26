@@ -6,10 +6,12 @@ import "./App.css";
 import { Navbar, Posts } from "./components/index";
 
 const App = () => {
+
+  // Declaração dos states que serão utilizados por todo o projeto
   const [posts, setPosts] = useState([]);
   const [comments, setComments] = useState([]);
-  const [users, setUsers] = useState([]);
 
+  // Criação das funções que puxarão os dados do JSON
   const apiGetPosts = () => {
     axios.get(`https://jsonplaceholder.typicode.com/posts`).then((res) => {
       setPosts(res.data);
@@ -22,23 +24,17 @@ const App = () => {
     });
   };
 
-  const apiGetUsers = () => {
-    axios(`https://jsonplaceholder.typicode.com/users`).then((res) => {
-      setUsers(res.data);
-    });
-  };
-
+  // Execução das funções para efetivamente puxar os dados
   useEffect(() => {
     apiGetPosts();
     apiGetComments();
-    apiGetUsers();
   }, []);
 
   return (
     <div className="app__fetch">
       <Navbar></Navbar>
 
-      <Posts posts={posts} comments={comments} users={users}></Posts>
+      <Posts posts={posts} comments={comments}></Posts>
     </div>
   );
 };
